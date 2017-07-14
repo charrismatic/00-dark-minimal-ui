@@ -1,0 +1,29 @@
+
+// MINIMAP
+// HIDE MINIMAP WHEN EDITOR DOES NOT HAVE FOCUS
+atom-text-editor {
+  atom-text-editor-minimap {
+    max-width: 5em;
+    opacity: 0;
+
+    .minimap-visible-area::after {
+      background-color: rgba(58, 191, 230, 0.2);
+    }
+  }
+
+  // SHOW MINIMAP WHEN EDITOR HAS FOCUS
+  &:hover,
+  &.is-focused {
+    atom-text-editor-minimap {
+      opacity: 0.6;
+    }
+  }
+}
+
+// HIDE SCROLLBAR WHEN MINIMAP
+atom-text-editor[with-minimap] {
+  .vertical-scrollbar {
+    width: 0;
+    opacity: 0;
+  }
+}

@@ -1,4 +1,4 @@
-# Atom UI Theme Template
+# 00-dark-minimal-ui Theme
 
 This is a __starter template__ for creating an Atom UI theme.
 

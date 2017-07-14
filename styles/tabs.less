@@ -55,3 +55,207 @@
     }
   }
 }
+
+
+///
+
+//ATOM TABS
+@tabHeight: 2em;
+
+atom-pane-container {
+  .tab-bar .tab {
+    font-size: 0.9rem;
+
+    &.active {
+      flex: 1.1;
+      min-width: auto;
+      max-width: 160px;
+      border-color: #49cff7;
+      border-right: 1px solid;
+      border-left: 1px solid;
+      background: #43b9dc;
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+}
+
+atom-panel-container {
+  .atom-dock-content-wrapper {
+    .tab-bar .tab {
+      border: 0;
+      background: initial;
+      text-align: left;
+      font-weight: normal;
+      font-size: 1em;
+    }
+  }
+}
+
+.tab-bar {
+  position: relative;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  overflow: initial;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  background: #206fb9;
+  box-shadow: 0 2px 10 0 rgba(25, 52, 78, 0.5);
+  line-height: 1;
+  -webkit-user-select: none;
+
+  .tab {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    min-width: 7rem;
+    max-width: 200;
+    height: auto;
+    border-left: 1px solid #004582;
+    background: none;
+    color: rgba(239, 235, 235, 0.87);
+    font-weight: bold;
+    font-size: 0.85rem;
+    line-height: @tabHeight;
+    padding: 0.2em 5px 0.2em 0.8em;
+    cursor: pointer;
+    transition: 0.1s;
+
+    &::after,
+    &::before,
+    &.active::before,
+    &.active::after {
+      content: none;
+    }
+
+    .title {
+      position: relative;
+      margin: 0;
+      padding: 1em 10 1em 0.4em;
+      color: #eeeeee;
+      vertical-align: middle;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: none;
+      font-weight: normal;
+      transition: 0.15s;
+      pointer-events: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    &.active {
+      flex: 2;
+      border-left: 1px solid #004582;
+      box-shadow: none;
+      box-shadow: 2px 4px 8px 0 rgba(13, 37, 56, 0.68);
+
+      .title {
+        color: #d8d42c;
+        font-weight: bold;
+
+        &::before {
+          background-color: #9ac103;
+        }
+      }
+    }
+
+    // CLOSE ICON
+    .tab {
+      .close-icon {
+        position: absolute;
+        top: 0.8em;
+        right: 1.8em;
+        vertical-align: top;
+        text-align: right;
+        cursor: default;
+        height: @tabHeight;
+        line-height: @tabHeight;
+      }
+
+      &.modified:not(:hover) .close-icon {
+        top: 1em;
+        right: 1em;
+        width: 0.8em;
+        height: 0.8em;
+        border: 2px solid #d8d42c;
+      }
+
+      &:not(:hover) .close-icon {
+        top: 1em;
+        right: 1em;
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 50%;
+        line-height: 1em;
+      }
+
+      &:hover .close-icon {
+        font-size: 1.2rem;
+      }
+
+      .close-icon::before {
+        content: "\f081";
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1em;
+        color: white;
+        font-family: 'Octicons Regular';
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  }
+
+  &::after {
+    width: 0;
+    height: 0;
+    background: 0;
+    content: none;
+  }
+}
+
+atom-pane-container atom-pane-axis {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+atom-panel-container {
+  .atom-dock-content-wrapper {
+    .tab-bar .tab {
+      border: 0;
+      background: initial;
+      text-align: left;
+      font-weight: normal;
+      font-size: 1em;
+    }
+  }
+}
+
+// TREE VIEW TAB HEADER
+atom-dock {
+  .left {
+    .tab-bar {
+      border-right: 3px solid green;
+
+      .tab {
+        display: inline-block;
+        margin: 0;
+        max-width: none;
+        width: 100%;
+        border: 0;
+      }
+    }
+  }
+}
