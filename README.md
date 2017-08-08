@@ -1,27 +1,74 @@
-# 00-dark-minimal-ui Theme
+[![Build Status](https://img.shields.io/travis/atom-material/atom-material-ui.svg?style=flat-square)](https://travis-ci.org/atom-material/atom-material-ui)
+[![apm](https://img.shields.io/apm/dm/atom-material-ui.svg?style=flat-square)](https://atom.io/packages/atom-material-ui)
+[![apm](https://img.shields.io/apm/v/atom-material-ui.svg?style=flat-square)](https://atom.io/packages/atom-material-ui)
+[![apm](https://img.shields.io/apm/l/atom-material-ui.svg?style=flat-square)]()
+[![Gitter](https://img.shields.io/gitter/room/silvestreh/atom-material-ui.svg?style=flat-square)](https://gitter.im/silvestreh/atom-material-ui)
+[![Support AMU](https://img.shields.io/badge/donate-on%20pledgie-green.svg?style=flat-square)](https://pledgie.com/campaigns/29552)
 
-This is a __starter template__ for creating an Atom UI theme.
-
-This template only includes the __minimum of styling__ needed and comes with a neutral look. It could already be used as a real theme, but its purpose is to serve as a basis for creating your own theme. It is documented throughout and invites you to make changes to your liking. For some inspiration take a look at other Atom themes at [atom.io/themes](https://atom.io/themes/). Or you're always free to fork a theme that already comes close to your vision.
-
-Happy theming! 🚀
-
-
-## Getting started
-
-1. Fork this repository.
-2. Continue with step 2 from [Creating a UI Theme](http://flight-manual.atom.io/hacking-atom/sections/creating-a-theme/#creating-a-ui-theme)
-
-If you get stuck somewhere, feel free to create an [issue](https://github.com/atom-community/ui-theme-template/issues/new).
-
-ps. Don't forget to delete the above and edit the below in your own `README.md`.
-
-
+![AMU](http://i.imgur.com/7C2H2mw.png)
 ---
 
+A dynamic UI theme for Atom that (kinda) follows Google's Material Design Guidelines. Best with [Atom Material Syntax](https://github.com/atom-material/atom-material-syntax).
 
-# My UI theme
+Inspired by Mattia Astorino's [SublimeText theme](https://github.com/equinusocio/material-theme).
 
-A short description of your theme.
+# Installation
 
-![A screenshot of your theme](https://cloud.githubusercontent.com/assets/378023/8842525/4215f26c-3136-11e5-9d94-d2c078a05d24.png)
+Fire up a console and type:
+
+```shell
+apm install atom-material-ui
+```
+
+Or, inside Atom's settings select Install and then search for this package.
+
+# Configuration
+
+Atom Material UI supports different accent colors. To change it, go to Settings > Themes and click the cog icon next to the theme selector.
+
+![](http://i.imgur.com/pf3oiZr.png)
+
+You'll find the color picker there.
+
+# Screenshots
+
+Here's the obligatory screenshot.
+
+### With [Atom Material Syntax](https://atom.io/packages/atom-material-syntax)
+
+```shell
+apm install atom-material-syntax
+```
+
+![](http://i.imgur.com/ExPYmJY.png)
+
+### With [Light syntax](https://atom.io/packages/atom-material-syntax-light) theme variant
+
+```shell
+apm install atom-material-syntax-light
+```
+
+![](http://i.imgur.com/q1o78sX.png)
+
+### With [Dark syntax](https://atom.io/packages/atom-material-syntax-dark) theme variant
+
+```shell
+apm install atom-material-syntax-dark
+```
+
+![](http://i.imgur.com/orhIvwS.png)
+
+# Contributing
+
+Please check the [CONTRIBUTING.md](https://github.com/atom-material/atom-material-ui/blob/master/CONTRIBUTING.md) file.
+
+# Extra
+
+![](http://i.imgur.com/0tHORB1.png)
+
+You can download the redesigned icon from [dropbox](https://www.dropbox.com/s/8gyn40sw95626dx/Atom-MD-Icon.zip?dl=0). It's a ZIP file containing multiple resolution PNGs, ICNS and ICO formats. Windows ICO converted by Akshit Tripathi.
+
+# License
+Atom Material UI is licensed under MIT.
+
+View the license file [here](https://github.com/atom-material/atom-material-ui/blob/master/LICENSE.md)

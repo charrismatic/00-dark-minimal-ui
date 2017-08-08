@@ -1,218 +1,259 @@
 
 // Tree View
 // -------------------
-
-// Used to explore and open files in the current project.
 // Overrides: atom/tree-view
 
-.tree-view-resizer {
-  border-right: 1px solid @base-border-color;
-}
-
-.tree-view {
-  color: @text-color;
-  background-color: @tree-view-background-color;
-
-  .list-item.selected {
-    color: @text-color-selected;
-  }
-}
+@tree-view-background-color: #0c141b;
+@tree-view-selected-color:   rgb(13, 40, 53);
 
 @mild_purple_sidebar: #3e3146;
 @project_yellow: #ffeb3b;
 
-//  ROW TITLE (NOT ICONS)
-.list-tree,
-.list-group {
-  li:not(.list-nested-item) .name,
-  li.list-nested-item > .list-item .name {
-    position: relative;
-    margin-left: 0;
-    padding-left: 0.8rem;
-  }
-}
+// USED TO
+// @tree-view-minimum-width: 160px;
 
-.tree-view,
-.list-tree {
-  .has-collapsable-children {
-    .list-nested-item {
 
-      // FOLDER CLOSED ARROW
-      &.collapsed {
-        > .list-item::before {
-          position: absolute;
-          top: 0.1rem;
-          left: -0.4rem;
-          display: inline-block;
-          height: auto;
-          color: #908d9e;
-          content: '\f078';
-          text-align: center;
-          text-decoration: none;
-          font-weight: normal;
-          font-style: normal;
-          font-size: 1.1rem;
-          font-family: 'Octicons Regular';
-          -webkit-font-smoothing: antialiased;
-        }
-      }
-      // FOLDER OPEN ARROW
-      .list-item::before {
-        position: absolute;
-        top: 0.1rem;
-        left: -0.5rem;
-        display: block;
-        margin: auto;
-        padding: 0;
-        width: 1rem;
-        height: 1rem;
-        border-left: 1px solid rgba(83, 44, 107, 0);
-        content: '\f0a3';
-        text-align: center;
-        text-decoration: none;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 1rem;
-        font-family: 'Octicons Regular';
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        z-index: 10;
+atom-workspace {
+  .tree-view {
+    font-size: 1rem;
+    background: @tree-view-background-color;
+
+    .selected::before {
+      background: @tree-view-selected-color;
+    }
+
+    &:focus {
+      .selected::before {
+        background: @base-color;
       }
     }
-  }
-}
 
-.tree-view {
-  .project-root {
-    // PROJECT ROOT CONTAINER
-    > .header {
-      width: 100%;
-      height: 3rem;
-      background: #18324a;
-      line-height: initial;
+    .tree-view-resizer {
+      border-right: 1px solid @base-border-color;
+    }
 
-      // PROJECT ROOT TEXT
-      span,
-      &::before,
-      &.list-item.project-root-header {
-        color: @project_yellow;
-        margin: 0;
-        padding: 0.5em 0;
-        text-shadow: 2px 2px rgba(0, 0, 0, 0.81);
-      }
-
-      // PROJECT ROOT FOLDER ICON
-      &.list-item.project-root-header .name.icon::before {
-        content: "\f033";
-        color: @project_yellow;
-        display: inline-block;
-        font-family: 'Octicons Regular';
-        font-weight: bold;
-        margin-right: 0.4rem;
-        text-align: center;
-        width: 1.4rem;
-      }
-
-      // HIDE PROJECT ROOT FOLDER EXPAND ARROW
-      &.list-item.project-root-header::before {
-        visibility: hidden;
+    .tree-view-resizer {
+      .tree-view-resize-handle {
+        width: 8px;
       }
     }
-  }
-}
 
-// //Tree VIEW SETTINGS
-.tree-view {
-  padding-left: 0;
-  background-color: #234c73;
-  font-size: 1rem;
+    .focusable-panel {
+      opacity: 1;
 
-  .full-menu {
-    padding-left: 0.2em;
+      &:focus {
+        .selected {
+          color: @accent-text-color;
 
-    &.list-tree {
-      position: relative;
-      // overflow: scroll;
-      min-width: min-content;
-      background-color: @mild_purple_sidebar;
+          &::before {
+            background: @base-color;
+          }
+        }
+      }
     }
-  }
 
-  .directory.selected > .list-item::after {
-    background-color: rgb(11, 104, 185);
-  }
-}
+    .tree-view {
+      color: @text-color;
+      background-color: @tree-view-background-color;
 
-.list-tree,
-.list-group {
-  .list-nested-item.status-ignored:not(.selected) > .list-item { color: rgb(228, 228, 228); }
-}
-
-// GIT STATUS
-.tree-view-git-status {
-  .git-branch-production {
-    color: red;
-    text-shadow: -1px 0 8px rgba(255, 12, 12, 1);
-  }
-
-  .git-branch-master .branch-label {
-    color: gold;
-    text-shadow: -1px 0 8px rgba(255, 215, 0, 1);
-  }
-}
-
-// TREE VIEW OVERIDES.list-group .selected::before, .list-tree .selected::before
-.list-tree {
-  &.has-collapsable-children {
-    .list-nested-item {
-      > .list-group > li,
-      > .list-tree > li {
-        padding-left: 0.8em;
+      .list-item.selected {
+        color: @text-color-selected;
       }
+    }
 
-      > .list-item {
-        margin: 0;
-        color: rgb(165, 165, 165);
-        line-height: 1.6em;
-
-        &::before {
-          top: auto;
-          display: inline-block;
-          margin-right: 0.5em;
-          vertical-align: text-top;
-          line-height: 1.6em;
-        }
-      }
-
-      &.collapsed {
-        > .list-item::before {
-          top: auto;
-          display: inline-block;
-          margin-right: 0.1em;
-          line-height: 1.6em;
-          vertical-align: text-top;
-        }
-      }
-
-      .list-item {
+    //  ROW TITLE (NOT ICONS)
+    .list-tree,
+    .list-group {
+      li:not(.list-nested-item) .name,
+      li.list-nested-item > .list-item .name {
+        position: relative;
         margin-left: 0;
+        padding-left: 0.8rem;
       }
     }
-  }
 
-  .selected::before {
-    height: 1.8em;
-    background: rgba(171, 178, 191, 0.3);
-    line-height: 1.8em;
-  }
+    .tree-view,
+    .list-tree {
+      .has-collapsable-children {
+        .list-nested-item {
 
-  .list-tree li:not(.list-nested-item) {
-    line-height: 1.8em;
-  }
+          // FOLDER CLOSED ARROW
+          &.collapsed {
+            > .list-item::before {
+              position: absolute;
+              top: 0.1rem;
+              left: -0.4rem;
+              display: inline-block;
+              height: auto;
+              color: #908d9e;
+              content: '\f078';
+              text-align: center;
+              text-decoration: none;
+              font-weight: normal;
+              font-style: normal;
+              font-size: 1.1rem;
+              font-family: 'Octicons Regular';
+              -webkit-font-smoothing: antialiased;
+            }
+          }
+          // FOLDER OPEN ARROW
+          .list-item::before {
+            position: absolute;
+            top: 0.1rem;
+            left: -0.5rem;
+            display: block;
+            margin: auto;
+            padding: 0;
+            width: 1rem;
+            height: 1rem;
+            border-left: 1px solid rgba(83, 44, 107, 0);
+            content: '\f0a3';
+            text-align: center;
+            text-decoration: none;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 1rem;
+            font-family: 'Octicons Regular';
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            z-index: 10;
+          }
+        }
+      }
+    }
 
-  .icon::before {
-    margin-right: 0;
-    font-size: 1em;
-    opacity: 0.8;
+    .tree-view {
+      .project-root {
+        // PROJECT ROOT CONTAINER
+        > .header {
+          width: 100%;
+          height: 3rem;
+          background: #18324a;
+          line-height: initial;
+
+          // PROJECT ROOT TEXT
+          span,
+          &::before,
+          &.list-item.project-root-header {
+            color: @project_yellow;
+            margin: 0;
+            padding: 0.5em 0;
+            text-shadow: 2px 2px rgba(0, 0, 0, 0.81);
+          }
+
+          // PROJECT ROOT FOLDER ICON
+          &.list-item.project-root-header .name.icon::before {
+            content: "\f033";
+            color: @project_yellow;
+            display: inline-block;
+            font-family: 'Octicons Regular';
+            font-weight: bold;
+            margin-right: 0.4rem;
+            text-align: center;
+            width: 1.4rem;
+          }
+
+          // HIDE PROJECT ROOT FOLDER EXPAND ARROW
+          &.list-item.project-root-header::before {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+    // //Tree VIEW SETTINGS
+    .tree-view {
+      padding-left: 0;
+      background-color: #234c73;
+      font-size: 1rem;
+
+      .full-menu {
+        padding-left: 0.2em;
+
+        &.list-tree {
+          position: relative;
+          min-width: min-content;
+          background-color: @tree-view-background-color;
+        }
+      }
+
+      .directory.selected > .list-item::after {
+        background-color: rgb(11, 104, 185);
+      }
+    }
+
+      .list-tree,
+    .list-group {
+      .list-nested-item.status-ignored:not(.selected) > .list-item { color: rgb(228, 228, 228); }
+    }
+
+    // GIT STATUS
+    .tree-view-git-status {
+      .git-branch-production {
+        color: red;
+        text-shadow: -1px 0 8px rgba(255, 12, 12, 1);
+      }
+
+      .git-branch-master .branch-label {
+        color: gold;
+        text-shadow: -1px 0 8px rgba(255, 215, 0, 1);
+      }
+    }
+
+    // TREE VIEW OVERIDES.list-group .selected::before, .list-tree .selected::before
+    .list-tree {
+      &.has-collapsable-children {
+        .list-nested-item {
+          > .list-group > li,
+          > .list-tree > li {
+            padding-left: 0.8em;
+          }
+
+          > .list-item {
+            margin: 0;
+            color: rgb(165, 165, 165);
+            line-height: 1.6em;
+
+            &::before {
+              top: auto;
+              display: inline-block;
+              margin-right: 0.5em;
+              vertical-align: text-top;
+              line-height: 1.6em;
+            }
+          }
+
+          &.collapsed {
+            > .list-item::before {
+              top: auto;
+              display: inline-block;
+              margin-right: 0.1em;
+              line-height: 1.6em;
+              vertical-align: text-top;
+            }
+          }
+
+          .list-item {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .selected::before {
+        height: 1.8em;
+        background: rgba(171, 178, 191, 0.3);
+        line-height: 1.8em;
+      }
+    }
+
+    .list-tree li:not(.list-nested-item) {
+      line-height: 1.8em;
+    }
+
+    .icon::before {
+      margin-right: 0;
+      font-size: 1em;
+      opacity: 0.8;
+    }
   }
 }
