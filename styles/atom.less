@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+atom-workspace {
+    background-color: @accent_blue;
+    font-size: 0.8rem;
+}
+
+.scrollbars-visible-always {
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-corner,
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: @scrollbar-color;
+      border-radius: 0;
+    }
+}

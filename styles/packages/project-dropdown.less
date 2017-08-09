@@ -1,0 +1,75 @@
+atom-dock {
+  .project-dropdown-container {
+    padding: 10px;
+    position: relative;
+    display: flex !important;
+    z-index: 2;
+    border-right: 5px solid #21252b;
+    background-color: #1c262d !important;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+  .project-dropdown-container:before {
+    font-family: 'Octicons Regular';
+    font-weight: normal;
+    font-style: normal;
+    display: block;
+    line-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 2px 0 1px;
+    content: "\f001";
+    position: relative;
+    flex: 0 1 auto;
+    left: initial;
+    top: initial;
+    }
+
+  .project-dropdown-select {
+    font-family: 'Roboto', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif !important;
+    -webkit-appearance: menulist-button;
+    background-color: #1c262d;
+    color: rgba(206, 206, 206, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto;
+    margin: 0 .5em;
+  }
+
+  .project-dropdown-select option {
+    font-family: 'Roboto', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif !important;
+  }
+
+  .project-dropdown-container .project-dropdown-close {
+    background-color: #1c262d !important;
+    border: 0;
+    position: relative;
+    padding: 0;
+    width: 20px;
+    margin: 0 4px 0 0;
+    flex: 0 1 auto;
+    display: block;
+    top: initial;
+    left: initial;
+    right: initial;
+  }
+
+  .project-dropdown-container .project-dropdown-close:before {
+    content: "\f081";
+    font-family: 'Octicons Regular';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
