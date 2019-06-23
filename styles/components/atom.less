@@ -19,7 +19,14 @@ atom-workspace {
     }
 
     ::-webkit-scrollbar-thumb {
-      background: @scrollbar-color;
       border-radius: 0;
+      background: @scrollbar-color;
     }
+}
+
+.settings-view {
+  ::-webkit-scrollbar-corner,
+  ::-webkit-scrollbar-track {
+    background: @scrollbar-color;
+  }
 }

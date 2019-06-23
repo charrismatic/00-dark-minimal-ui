@@ -1,71 +1,45 @@
-
-@modified-icon-width: 8px;
-@tab-top-padding: 5px;
-
-@tab-bottom-border-height: 2px;
-@tab-min-width: 50px;
-@tab-max-width: 160px;
-
-@tab-height: auto;
-
-@tab-font-size: 1em;
-@tab-padding: @component-padding;
-
-@tab-bar-background-color: @accent_blue;
-@tab-bar-border-color: transparent;
-
-@tab-background-color: transparent;
-@tab-background-color-active: rgb(35, 177, 157);
-
-@tab-border-color: rgba(28,93,154,1);
-@tab-border-color-active: #174f84;
-
-@tab-text-color: #cecece;
-@tab-text-color-active:  #aeff1a;
-@tab-text-color-hover: @dodger_blue;
-
 atom-workspace {
 
   .tab-bar {
-    background-color: @tab-bar-background-color;
     border-radius: 0;
-    box-shadow: 0 2px 10px 0 rgba(25, 52, 78, 0.5);
-    display: flex;
-    margin: 0;
-    overflow: initial;
     padding: 0;
-    position: relative;
+    margin: 0;
     z-index: 10;
+    display: flex;
+    overflow: initial;
+    position: relative;
     -webkit-user-select: none;
+    box-shadow: 0 2px 10px 0 rgba(25, 52, 78, 0.5);
+    background-color: @tab-bar-background-color;
 
     &.inset-panel { background: @tab-bar-background-color; }
     &::-webkit-scrollbar { display: none; }
 
     .tab {
-      background: none;
-      border-left: 1px solid @tab-border-color;
-      border-right: 1px solid @tab-border-color;
-      color: @tab-text-color;
-      cursor: pointer;
       display: inline-block;
-      font-size: @tab-font-size;
-      font-weight: normal;
       margin: 0;
+      background: none;
+      cursor: pointer;
+      font-weight: normal;
+      position: relative;
+      color: @tab-text-color;
+      font-size: @tab-font-size;
       max-width: @tab-max-width;
       min-width: @tab-min-width;
-      padding: 0.8em @component-padding;
-      position: relative;
+      border-left: 1px solid @tab-border-color;
+      border-right: 1px solid @tab-border-color;
+      padding: 0.5em @component-padding;
 
       &.active {
+        z-index: 1;
+        font-weight: bold;
+        max-width: 160px;
+        min-width: auto;
         background-color: @tab-background-color-active;
         border-left: 1px solid @tab-border-color-active;
         border-right: 1px solid @tab-border-color-active;
         color: @tab-text-color-active;
         flex: 1.1;
-        font-weight: bold;
-        max-width: 160px;
-        min-width: auto;
-        z-index: 1;
       }
 
       &:hover {
@@ -111,10 +85,8 @@ atom-workspace {
         height: @modified-icon-width;
         margin-top: -3px;
         opacity: 1;
-        right: @component-padding + 4px; // 4px -> half of icon size
-        // right: @component-padding + 4;
+        right: @component-padding + 4px;
         top: ~'calc(50% - .135em)';
-        // top: 50%;
         transform: scale(1);
         width: @modified-icon-width;
       }
@@ -151,9 +123,7 @@ atom-workspace {
       height: calc(100% + 1rem );
       pointer-events: none;
 
-      &:after {
-        top: 0;
-      }
+      &:after { top: 0; }
     }
 
       // DARKER TAB BAR
@@ -177,6 +147,7 @@ atom-workspace {
 
           &:hover { color: @accent-text-color; }
         }
+
         .close-icon { color: @accent-text-color; }
       }
     }
@@ -185,6 +156,7 @@ atom-workspace {
     &.min_00 {
       height: @compact-tab-height;
       max-height: @compact-tab-height;
+
       .tab {
         height: @compact-tab-height;
         line-height: @compact-tab-height;
@@ -217,17 +189,14 @@ atom-pane .tab-bar .tab .title[data-path]::before {
   margin-right: @component-icon-padding;
   color: @tab-text-color !important;
 
-  .amu-tinted-tab-bar & {
-    color: @accent-text-color !important;
-  }
+  .amu-tinted-tab-bar & { color: @accent-text-color !important; }
 }
 
 // PROJECT LEFT SIDE TABBAR
 atom-panel-container {
-// atom-dock {}
-.atom-dock-content-wrapper {
+  // atom-dock {}
+  .atom-dock-content-wrapper {
     // &.left {}
-
     .tab-bar {
       border-right: 3px solid green;
 

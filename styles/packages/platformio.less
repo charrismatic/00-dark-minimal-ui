@@ -1,7 +1,88 @@
 .pio {
-    select.form-control {
-        .select();
-        line-height: 36px;
-        height: 36px;
+  select.form-control {
+    height: 3em;
+    line-height: 3em;
+
+    .select();
+  }
+}
+
+
+.platformio-ide-terminal.terminal-view {
+  padding-top: 0;
+
+  .input-block {
+    padding: 0;
+    background-color: #114254;
+
+    .btn-toolbar {
+      padding: 0;
     }
+  }
+
+  .panel-divider {
+    position: absolute;
+    z-index: 3;
+    display: inherit;
+    flex: 0 0 0;
+    padding: 0;
+    order: 1;
+    width: 100%;
+    margin: 0;
+    height: 3px;
+    background-color: #9bb351;
+    cursor: ns-resize;
+  }
+
+
+  .terminal {
+    padding-top: .5em;
+  }
+
+  .input-block {
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0.5em;
+    right: .3em;
+    padding: 0;
+    right: 0;
+    opacity: .5;
+    float: right;
+    transition: 200ms opacity ease-in-out;
+  }
+
+  .btn-toolbar {
+    background: transparent;
+    opacity: .2;
+    transition: 200ms opacity ease-in-out;
+
+  .btn.icon:before {
+      margin-right: 0;
+      color: #57beaf;
+      opacity: .3;
+      transition: 200ms opacity ease-in-out;
+    }
+  }
+}
+
+
+.platformio-ide-terminal.terminal-view {
+  &:hover,
+  &:active,
+  &:focus {
+    .input-block {
+      opacity: .5;
+    }
+
+    .btn-toolbar {
+      opacity: 1;
+
+    .btn.icon:before {
+        margin-right: 0;
+        color: #57beaf;
+        opacity: 1;
+      }
+    }
+  }
 }
